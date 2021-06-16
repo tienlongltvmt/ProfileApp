@@ -1,23 +1,16 @@
 module.exports = {
-  root: true,
   parser: '@typescript-eslint/parser',
-  extends: [
-    '@react-native-community',
-    'prettier',
-    'prettier/react',
-    'plugin:prettier/recommended',
-    'eslint-config-prettier'
-  ],
+  extends: ['@react-native-community', 'prettier', 'eslint-config-prettier'],
   plugins: [
-    'react', 
-    'jsx-a11y', 
-    'import', 
-    'eslint-plugin-prettier', 
+    'react',
+    'jsx-a11y',
+    'import',
+    'eslint-plugin-prettier',
     'eslint-plugin-react',
     '@typescript-eslint'
   ],
   rules: {
-    'no-restricted-globals': ['1'],
+    'no-restricted-globals': ['off'],
     'import/no-extraneous-dependencies': ['error', {devDependencies: true}],
     'import/prefer-default-export': 'off',
     'react/jsx-filename-extension': [1, {extensions: ['.js', '.jsx', '.ts', '.tsx', 'json']}],
@@ -27,11 +20,11 @@ module.exports = {
     'react/destructuring-assignment': [0],
     'react/forbid-prop-types': [0],
     'react/no-unescaped-entities': ['error', {forbid: ['>', '}']}],
-    'quotes': ['error', 'single', {avoidEscape: true, allowTemplateLiterals: false}],
+    quotes: ['error', 'single', {avoidEscape: true, allowTemplateLiterals: false}],
     'jsx-quotes': ['error', 'prefer-double'],
-    'camelcase': 'off',
+    camelcase: 'off',
     'no-use-before-define': 'off',
-    'semi': ['error', 'always'],
+    semi: ['error', 'always'],
     'prettier/prettier': [
       'error',
       {
@@ -48,14 +41,7 @@ module.exports = {
   settings: {
     'import/resolver': {
       node: {
-        extensions: [
-          '.js', 
-          '.jsx', 
-          '.json', 
-          '.native.js', 
-          '.ts', 
-          '.tsx'
-        ]
+        extensions: ['.js', '.jsx', '.json', '.native.js', '.ts', '.tsx']
       }
     }
   },
