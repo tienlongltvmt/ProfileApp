@@ -11,6 +11,9 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		13BC024D267CA32D002AB5A4 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 13BC024A267CA32D002AB5A4 /* Roboto-Bold.ttf */; };
+		13BC024E267CA32D002AB5A4 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 13BC024B267CA32D002AB5A4 /* Roboto-Regular.ttf */; };
+		13BC024F267CA32D002AB5A4 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 13BC024C267CA32D002AB5A4 /* Roboto-Medium.ttf */; };
 		4F2411341D780ABE311F222E /* libPods-ProfileApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7417E4DE5262954BE1A4CB2 /* libPods-ProfileApp.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		97E4361633C7831DBC9449A5 /* libPods-ProfileApp-ProfileAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBAE3B8DB796B7229D6C6E6 /* libPods-ProfileApp-ProfileAppTests.a */; };
@@ -37,6 +40,9 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ProfileApp/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ProfileApp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ProfileApp/main.m; sourceTree = "<group>"; };
+		13BC024A267CA32D002AB5A4 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Bold.ttf"; path = "../src/assets/fonts/Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		13BC024B267CA32D002AB5A4 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Regular.ttf"; path = "../src/assets/fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		13BC024C267CA32D002AB5A4 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Medium.ttf"; path = "../src/assets/fonts/Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		5B1C320BF4D2DBB39B141D6C /* Pods-ProfileApp-ProfileAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProfileApp-ProfileAppTests.release.xcconfig"; path = "Target Support Files/Pods-ProfileApp-ProfileAppTests/Pods-ProfileApp-ProfileAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		7DF9AC684B6454ABE5229B15 /* Pods-ProfileApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProfileApp.release.xcconfig"; path = "Target Support Files/Pods-ProfileApp/Pods-ProfileApp.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ProfileApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -116,6 +122,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				13BC024A267CA32D002AB5A4 /* Roboto-Bold.ttf */,
+				13BC024C267CA32D002AB5A4 /* Roboto-Medium.ttf */,
+				13BC024B267CA32D002AB5A4 /* Roboto-Regular.ttf */,
 				13B07FAE1A68108700A75B9A /* ProfileApp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* ProfileAppTests */,
@@ -145,7 +154,6 @@
 				8E43D822F3F57CDF03A620A2 /* Pods-ProfileApp-ProfileAppTests.debug.xcconfig */,
 				5B1C320BF4D2DBB39B141D6C /* Pods-ProfileApp-ProfileAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -160,7 +168,6 @@
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				D664FF4511162B2484E9B166 /* [CP] Embed Pods Frameworks */,
 				E078692F67920E5750D99FBD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -183,7 +190,6 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				2639846CA174910536252D8F /* [CP] Embed Pods Frameworks */,
 				119558F3822108A2592A0E2D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -243,6 +249,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13BC024D267CA32D002AB5A4 /* Roboto-Bold.ttf in Resources */,
+				13BC024E267CA32D002AB5A4 /* Roboto-Regular.ttf in Resources */,
+				13BC024F267CA32D002AB5A4 /* Roboto-Medium.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);
@@ -280,23 +289,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProfileApp/Pods-ProfileApp-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2639846CA174910536252D8F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ProfileApp/Pods-ProfileApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ProfileApp/Pods-ProfileApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProfileApp/Pods-ProfileApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		440CC22DF8831A52EDC1B0E5 /* [CP] Check Pods Manifest.lock */ = {
@@ -341,23 +333,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D664FF4511162B2484E9B166 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ProfileApp-ProfileAppTests/Pods-ProfileApp-ProfileAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ProfileApp-ProfileAppTests/Pods-ProfileApp-ProfileAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProfileApp-ProfileAppTests/Pods-ProfileApp-ProfileAppTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E078692F67920E5750D99FBD /* [CP] Copy Pods Resources */ = {
