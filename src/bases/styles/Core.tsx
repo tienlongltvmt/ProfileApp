@@ -34,7 +34,7 @@ const COLOR = {
     NEGATIVE_BTN: '#ff3b30'
   },
   TAB: {
-    RED: '#FF4646',
+    ACTIVE: '#707070',
     INACTIVE: '#CFCFCF'
   },
   BUTTON: {
@@ -76,9 +76,10 @@ export type TYPE_OF_FONT = 'Regular' | 'Medium' | 'Bold';
  * @public
  */
 const FONT_FAMILY = {
-  Bold: 'Roboto-Bold',
-  Medium: 'Roboto-Medium',
-  Regular: 'Roboto-Regular'
+  Bold: 'Montserrat-Bold',
+  Medium: 'Montserrat-Medium',
+  Regular: 'Montserrat-Regular',
+  SemiBold: 'Montserrat-SemiBold'
 };
 
 /**
@@ -204,14 +205,17 @@ const LAYOUT = {
   l_64: 64,
   l_70: 70,
   l_75: 75,
+  l_80: 80,
   l_88: 88,
   l_135: 135,
   l_140: 140,
   l_174: 174,
+  l_182: 182,
   l_213: 213,
   l_248: 248,
   l_250: 250,
-  l_255: 255
+  l_255: 255,
+  l_290: 290
 };
 
 export const setPosition = (top = 0, bottom = 0, left = 0, right = 0) => {

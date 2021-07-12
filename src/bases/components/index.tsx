@@ -1,6 +1,7 @@
 export * from './view/MyView';
 export * from './textview/MyText';
 export * from './button/MyButton';
+export * from './button/MyButtonNext';
 export * from './header/MyToolbar';
 export * from './icon/MyIcon';
 export * from './image/MyImage';

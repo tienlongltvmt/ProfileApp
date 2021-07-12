@@ -41,7 +41,7 @@ export default class App extends Component<{}, IStates> {
 
   async componentDidMount() {
     // await firebase.analytics().setAnalyticsCollectionEnabled(true);
-    // BackHandler.addEventListener('hardwareBackPress', this.backAction);
+    BackHandler.addEventListener('hardwareBackPress', this.backAction);
   }
 
   componentWillUnmount() {
@@ -50,14 +50,14 @@ export default class App extends Component<{}, IStates> {
 
   render() {
     return (
-      <Provider store={store}>
-        <SafeAreaView style={styles.container} edges={['left', 'right']}>
-          <StatusBar barStyle="dark-content" backgroundColor={COLOR.BG.WHITE} />
-          <Router />
-          <FlashMessage position="top" />
-          <RootLoading />
-        </SafeAreaView>
-      </Provider>
+      // <Provider store={store}>
+      <SafeAreaView style={styles.container} edges={['left', 'right', 'bottom', 'top']}>
+        <StatusBar barStyle="dark-content" backgroundColor={COLOR.BG.WHITE} />
+        <Router />
+        <FlashMessage position="top" />
+        <RootLoading />
+      </SafeAreaView>
+      // </Provider>
     );
   }
 }

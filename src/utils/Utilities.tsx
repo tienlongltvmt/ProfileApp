@@ -3,7 +3,6 @@ import {Platform, Dimensions, PixelRatio, StatusBar} from 'react-native';
 import moment from 'moment';
 import {showMessage} from 'react-native-flash-message';
 import {DATE_TIME_LIST, LIST_GENDER, ORDER_STATUS, TYPE_MESSAGE_RESPONSE} from 'common/Constants';
-import {IDateRange} from 'views/app';
 import MyStaticLocal from './MyStaticLocal';
 
 const {width, height} = Dimensions.get('screen');
@@ -318,145 +317,6 @@ export default class Utilities {
     return content;
   };
 
-  static getDateFilter(
-    typeDate:
-      | 'TOAN_THOI_GIAN'
-      | 'HOM_NAY'
-      | 'HOM_QUA'
-      | 'TUAN_NAY'
-      | 'TUAN_TRUOC'
-      | 'THANG_NAY'
-      | 'THANG_TRUOC'
-      | 'NAM_NAY'
-      | 'NAM_TRUOC'
-  ): IDateRange {
-    let formatOnServer = 'MM/DD/YYYY';
-    let filterOfDate: IDateRange = {};
-    let dateNow = new Date();
-    switch (typeDate) {
-      case 'TOAN_THOI_GIAN':
-        const allTimeTo = new Date(dateNow.getFullYear(), dateNow.getMonth(), dateNow.getDate());
-
-        filterOfDate = {
-          dateFrom: moment(0).format(formatOnServer),
-          dateTo: moment(allTimeTo).format(formatOnServer)
-        };
-        break;
-      case 'HOM_NAY':
-        const today = new Date(dateNow.getFullYear(), dateNow.getMonth(), dateNow.getDate());
-
-        filterOfDate = {
-          dateFrom: moment(today).format(formatOnServer),
-          dateTo: moment(today).format(formatOnServer)
-        };
-        break;
-
-      case 'HOM_QUA':
-        const yesterday = new Date(
-          dateNow.getFullYear(),
-          dateNow.getMonth(),
-          dateNow.getDate() - 1
-        );
-        filterOfDate = {
-          dateFrom: moment(yesterday).format(formatOnServer),
-          dateTo: moment(yesterday).format(formatOnServer)
-        };
-        break;
-
-      case 'TUAN_NAY':
-        const thisWeek = new Date(
-          new Date().getFullYear(),
-          new Date().getMonth(),
-          new Date().getDate() - 1
-        );
-
-        filterOfDate = {
-          dateFrom: moment(
-            new Date(thisWeek.setDate(thisWeek.getDate() - thisWeek.getDay() + 1))
-          ).format(formatOnServer),
-          dateTo: moment(
-            new Date(thisWeek.setDate(thisWeek.getDate() - thisWeek.getDay() + 7))
-          ).format(formatOnServer)
-        };
-
-        break;
-
-      case 'TUAN_TRUOC':
-        const lastWeek = new Date(
-          new Date().getFullYear(),
-          new Date().getMonth(),
-          new Date().getDate() - 7
-        );
-
-        filterOfDate = {
-          dateFrom: moment(
-            new Date(lastWeek.setDate(lastWeek.getDate() - lastWeek.getDay() + 1))
-          ).format(formatOnServer),
-          dateTo: moment(
-            new Date(lastWeek.setDate(lastWeek.getDate() - lastWeek.getDay() + 7))
-          ).format(formatOnServer)
-        };
-
-        break;
-
-      case 'THANG_NAY':
-        const thisMonth = new Date(dateNow.getFullYear(), dateNow.getMonth(), dateNow.getDate());
-
-        filterOfDate = {
-          dateFrom: moment(new Date(thisMonth.getFullYear(), thisMonth.getMonth(), 1)).format(
-            formatOnServer
-          ),
-          dateTo: moment(new Date(thisMonth.getFullYear(), thisMonth.getMonth() + 1, 0)).format(
-            formatOnServer
-          )
-        };
-        break;
-
-      case 'THANG_TRUOC':
-        const lastMonth = new Date(
-          dateNow.getFullYear(),
-          dateNow.getMonth() - 1,
-          dateNow.getDate()
-        );
-        filterOfDate = {
-          dateFrom: moment(new Date(lastMonth.getFullYear(), lastMonth.getMonth(), 1)).format(
-            formatOnServer
-          ),
-          dateTo: moment(new Date(lastMonth.getFullYear(), lastMonth.getMonth() + 1, 0)).format(
-            formatOnServer
-          )
-        };
-
-        break;
-      case 'NAM_NAY':
-        const thisYear = new Date(dateNow.getFullYear(), dateNow.getMonth(), dateNow.getDate());
-        filterOfDate = {
-          dateFrom: moment(new Date(thisYear.getFullYear(), 0, 1)).format(formatOnServer),
-          dateTo: moment(new Date(thisYear.getFullYear() + 1, 0, 0)).format(formatOnServer)
-        };
-
-        break;
-      case 'NAM_TRUOC':
-        const lastYear = new Date(dateNow.getFullYear() - 1, dateNow.getMonth(), dateNow.getDate());
-        filterOfDate = {
-          dateFrom: moment(new Date(lastYear.getFullYear(), 0, 1)).format(formatOnServer),
-          dateTo: moment(new Date(lastYear.getFullYear() + 1, 0, 0)).format(formatOnServer)
-        };
-
-        break;
-
-      default:
-        const defaultDate = new Date(dateNow.getFullYear(), dateNow.getMonth(), dateNow.getDate());
-
-        filterOfDate = {
-          dateFrom: moment(defaultDate).format(formatOnServer),
-          dateTo: moment(defaultDate).format(formatOnServer)
-        };
-        break;
-    }
-
-    return filterOfDate;
-  }
   static getImageLogo = (widthLogo: number, heightLogo: number) => {
     const logo = `<svg xmlns="http://www.w3.org/2000/svg" width=${widthLogo} height=${heightLogo} viewBox="0 0 80 120">
     <path id="Path_22777" data-name="Path 22777" d="M100.3,75.442l-.2-.156a.607.607,0,0,1-.1-.88,28.359,28.359,0,0,0,3.457-5.93q1.555-3.647,2.629-6.994a1.078,1.078,0,0,1,1.452-.662l4.89,2.093a1.06,1.06,0,0,1,.406,1.658,66.706,66.706,0,0,1-5.982,6.122,48.866,48.866,0,0,1-5.832,4.776A.629.629,0,0,1,100.3,75.442ZM88.234,87.608q2.815-4.186,7.04-4.187a7.215,7.215,0,0,1,6.543,4.023,15.061,15.061,0,0,1,1.988,9.032q-6.3,2.053-18.967,1.724A21.9,21.9,0,0,1,88.234,87.608ZM73.148,56.5q.166-6.65.331-9.688l-1.5.082a17.712,17.712,0,0,0-7.127,6.576q.253,6.007.261,11.979V99.274l.5,7.718,2.283-.537a1.107,1.107,0,0,0,.516-.279,16.134,16.134,0,0,0,4.764-8.44c-.067-1.8-.108-3.635-.108-5.522V61.263Zm28.685,62.412c-.476.036-.95.056-1.425.056a14.509,14.509,0,0,1-11.595-5.008q-4.806-5.335-4.058-14.367H112q1.075-8.291-3.313-13.136-4.06-4.515-11.6-4.515a20.153,20.153,0,0,0-14.743,5.992A21.265,21.265,0,0,0,76.059,103.7q0,8.867,5.632,14.45,5.548,5.337,14.163,5.336a21.785,21.785,0,0,0,5.979-.805Zm30.513,22.531q-3.561,5.254-8.945,5.254a10.589,10.589,0,0,1-9.11-4.843v-25.7q4.305-5.007,10.021-5.009a9.716,9.716,0,0,1,8.532,4.844q3.063,4.763,3.064,12.233Q135.908,136.19,132.347,141.444ZM139.8,111.4a14.781,14.781,0,0,0-11.1-4.762,16.206,16.206,0,0,0-8.365,2.463,30.73,30.73,0,0,0-6.047,5.255l-.5-7.717-2.124.5a17.764,17.764,0,0,0-5.621,5.1q.283,4.411.29,9.179v30.952l-.083,4.762q-.167,6.65-.33,9.688l2.268-.125a19.668,19.668,0,0,0,6.455-4.329q-.355-7.117-.358-14.184v-.657a75.043,75.043,0,0,0,7.869.657,22.258,22.258,0,0,0,22.693-22.823Q144.853,116.652,139.8,111.4Z" transform="translate(-64.853 -46.813)" fill="#ad2a30"/>
@@ -464,6 +324,34 @@ export default class Utilities {
     `;
 
     return logo;
+  };
+
+  static getSvgTrangChu = (color?: string) => {
+    const svgTrangChu = `<svg xmlns="http://www.w3.org/2000/svg" width="19.28" height="19.282" viewBox="0 0 19.28 19.282">
+      <path id="home" d="M19.262,8.387h0L11.395.52a1.775,1.775,0,0,0-2.51,0L1.023,8.381l-.008.008A1.774,1.774,0,0,0,2.2,11.414l.055,0h.313V17.2a2.08,2.08,0,0,0,2.078,2.078H7.719a.565.565,0,0,0,.565-.565V14.179a.949.949,0,0,1,.948-.948h1.815a.949.949,0,0,1,.948.948v4.538a.565.565,0,0,0,.565.565h3.077A2.08,2.08,0,0,0,17.715,17.2V11.416h.291a1.775,1.775,0,0,0,1.256-3.03Zm-.8,1.711a.641.641,0,0,1-.456.189H17.15a.565.565,0,0,0-.565.565V17.2a.949.949,0,0,1-.948.948H13.125V14.179A2.08,2.08,0,0,0,11.047,12.1H9.232a2.08,2.08,0,0,0-2.078,2.078v3.973H4.642a.949.949,0,0,1-.948-.948V10.852a.565.565,0,0,0-.565-.565H2.262a.645.645,0,0,1-.444-1.1h0L9.684,1.319a.645.645,0,0,1,.912,0L18.46,9.182l0,0A.647.647,0,0,1,18.462,10.1Zm0,0" transform="translate(-0.499)" fill=${
+        color || '#7b7b7b'
+      }/>
+      </svg>
+      `;
+    return svgTrangChu;
+  };
+  static getSvgTaiKhoan = (color?: string) => {
+    const svgTaiKhoan = `<svg id="menu" xmlns="http://www.w3.org/2000/svg" width="19.282" height="19.282" viewBox="0 0 19.282 19.282">
+    <path id="Path_16309" data-name="Path 16309" d="M6.553,9.039H2.486A2.488,2.488,0,0,1,0,6.553V2.486A2.488,2.488,0,0,1,2.486,0H6.553A2.488,2.488,0,0,1,9.039,2.486V6.553A2.488,2.488,0,0,1,6.553,9.039ZM2.486,1.205a1.282,1.282,0,0,0-1.28,1.28V6.553a1.282,1.282,0,0,0,1.28,1.28H6.553a1.282,1.282,0,0,0,1.28-1.28V2.486a1.282,1.282,0,0,0-1.28-1.28Z" fill=${
+      color || '#7b7b7b'
+    }/>
+    <path id="Path_16310" data-name="Path 16310" d="M278.553,9.039h-4.067A2.488,2.488,0,0,1,272,6.553V2.486A2.488,2.488,0,0,1,274.486,0h4.067a2.488,2.488,0,0,1,2.486,2.486V6.553A2.488,2.488,0,0,1,278.553,9.039Zm-4.067-7.833a1.282,1.282,0,0,0-1.281,1.28V6.553a1.282,1.282,0,0,0,1.281,1.28h4.067a1.282,1.282,0,0,0,1.28-1.28V2.486a1.282,1.282,0,0,0-1.28-1.28Z" transform="translate(-261.756)" fill=${
+      color || '#7b7b7b'
+    }/>
+    <path id="Path_16311" data-name="Path 16311" d="M276.519,281.039a4.519,4.519,0,1,1,4.519-4.519A4.524,4.524,0,0,1,276.519,281.039Zm0-7.834a3.314,3.314,0,1,0,3.314,3.314A3.318,3.318,0,0,0,276.519,273.205Z" transform="translate(-261.756 -261.756)" fill=${
+      color || '#7b7b7b'
+    }/>
+    <path id="Path_16312" data-name="Path 16312" d="M6.553,281.039H2.486A2.488,2.488,0,0,1,0,278.553v-4.067A2.488,2.488,0,0,1,2.486,272H6.553a2.488,2.488,0,0,1,2.486,2.486v4.067A2.488,2.488,0,0,1,6.553,281.039Zm-4.067-7.834a1.282,1.282,0,0,0-1.28,1.281v4.067a1.282,1.282,0,0,0,1.28,1.28H6.553a1.282,1.282,0,0,0,1.28-1.28v-4.067a1.282,1.282,0,0,0-1.28-1.281Z" transform="translate(0 -261.756)" fill=${
+      color || '#7b7b7b'
+    }/>
+    </svg>
+    `;
+    return svgTaiKhoan;
   };
   static getHeaderRequest = () => {
     const {access_token} = MyStaticLocal.getUserToken();

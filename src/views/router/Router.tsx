@@ -1,9 +1,12 @@
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
+import {COLOR} from 'bases/styles/Core';
 import React, {PureComponent} from 'react';
 import MyNavigator from 'utils/MyNavigator';
 import Utilities from 'utils/Utilities';
+import CreditCard from 'views/creditCard/CreditCard';
 import Splash from 'views/splash/Splash';
+import RouterBottomTab from './RouterButtomTab';
 const RootStack = createStackNavigator();
 
 let navigator: any;
@@ -32,8 +35,29 @@ export class Router extends PureComponent {
           routeNameRef = currentRouteName;
           console.log(routeNameRef);
         }}>
-        <RootStack.Navigator headerMode="screen" initialRouteName="Splash">
-          <RootStack.Screen name="Splash" component={Splash} options={{headerShown: false}} />
+        <RootStack.Navigator
+          headerMode="screen"
+          initialRouteName="Splash"
+          screenOptions={{
+            headerBackTitleVisible: false
+          }}>
+          <RootStack.Screen
+            name="Splash"
+            component={Splash}
+            options={{
+              headerShown: false
+            }}
+          />
+          <RootStack.Screen
+            name="HomeRouter"
+            component={RouterBottomTab}
+            options={{headerShown: false}}
+          />
+          <RootStack.Screen
+            name="CreditCard"
+            component={CreditCard}
+            options={{title: 'Credit Card'}}
+          />
         </RootStack.Navigator>
       </NavigationContainer>
     );
